@@ -2,23 +2,24 @@ import { useEffect } from "react";
 import { useChatStore } from "../store/useChatStore.js"
 import SidebarSkeleton from "./skeletons/SidebarSkeleton.jsx";
 import { Users } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore.js";
 
 const Sidebar = () => {
-	const {getUsers, users, selectedUser, setSelectedUser, isUsersLoading} = useChatStore();
+	const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } = useChatStore();
 
-	const onlineUsers = [];
+	const { onlineUsers } = useAuthStore();
 
-	useEffect(()=> {
+	useEffect(() => {
 		getUsers();
 	}, [getUsers]);
 
-	if(isUsersLoading) return <SidebarSkeleton/>;
+	if (isUsersLoading) return <SidebarSkeleton />;
 
 	return (
 		<aside className='h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all during-200'>
 			<div className='border-b border-base-300 w-full p-5'>
 				<div className='flex items-center gap-2'>
-					<Users className='size-6'/>
+					<Users className='size-6' />
 					<span className="font-medium hidden lg:block">Contacts</span>
 				</div>
 				{/* Todo: Online filter toggle */}
@@ -31,16 +32,16 @@ const Sidebar = () => {
 							key={user._id}
 							onClick={() => setSelectedUser(user)}
 							className={`w-full p-3 flex items-center gap-1 hover:bg-base-300 transition-colors
-								${selectedUser?._id === user._id? 'bg-base-300 ring-1 ring-base-300' : ''}`}
+								${selectedUser?._id === user._id ? 'bg-base-300 ring-1 ring-base-300' : ''}`}
 						>
 							<div className="relative flex-[1] mx-auto lg:max-0">
-								<img src={user.profilePic || "/avatar.png"} alt="user.name" 
+								<img src={user.profilePic || "/avatar.png"} alt="user.name"
 									className="size-12 object-cover rounded-full"
 								/>
 								{
 									onlineUsers.includes(user._id) && (
-										<span 
-										className="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full ring-2 ring-zinc-900"
+										<span
+											className="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full ring-2 ring-zinc-900"
 										/>
 									)
 								}
