@@ -55,7 +55,7 @@ const ChatContainer = () => {
 									)
 								}
 								{
-									message.text && <p>{}message.text</p>
+									message.text && <p>{message.text}</p>
 								}
 							</div>
 						</div>
