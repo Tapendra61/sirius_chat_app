@@ -11,12 +11,27 @@ const io = new Server(server, {
 	}
 });
 
+// Used to store online users
+const userSocketMap = {}; // {key: value} || {userId: socketId}
+
 io.on("connection", (socket) => {
 	// Doing
 	console.log("A user connected: ", socket.id);
 
+	const userId = socket.handshake.query.userId;
+
+	if (userId) {
+		userSocketMap[userId] = socket.id;
+	}
+
+	// Send events to all connected clients
+	io.emit("getOnlineUsers", Object.keys(userSocketMap));
+
 	socket.on("disconnect", () => {
 		console.log("A user disconnected: ", socket.id);
+		delete userSocketMap[userId];
+		io.emit("getOnlineUsers", Object.keys(userSocketMap));
+
 	});
 });
 
