@@ -1,5 +1,5 @@
 # Chatty
-	Chatty is a Real Time chat application made using React.js as it's frontend and Express.js as the backend.
+Chatty is a Real Time chat application made using React.js as it's frontend and Express.js as the backend.
 
 1. ## Screenshots
 
