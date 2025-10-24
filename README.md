@@ -16,7 +16,7 @@
    d. Vite (build tool)
 
 3. ## Build Steps
-   a. Clone the project into your computer system.
-   b. Make sure Node.js is installed into your system.
-   c. Go to Mongodb Atlas website and make a database for the the application. Also do the same with Cloudinary.
-   d. The root project folder provides .env.sample file for the necessary variables. Change it's name to .env and place it inside the backend folder.
+   a. Clone the project into your computer system.<br>
+   b. Make sure Node.js is installed into your system.<br>
+   c. Go to Mongodb Atlas website and make a database for the the application. Also do the same with Cloudinary.<br>
+   d. The root project folder provides .env.sample file for the necessary variables. Change it's name to .env and place it inside the backend folder.<br>
