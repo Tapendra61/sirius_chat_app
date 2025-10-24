@@ -1,6 +1,6 @@
 # Chatty
 
-## Screenshots
+1. ## Screenshots
 
 ### Login
 ![login](assets/login.png)
@@ -8,4 +8,4 @@
 ### Chat
 ![chat](assets/chat.png)
 
-## Tools Used
+2. ## Tools Used
