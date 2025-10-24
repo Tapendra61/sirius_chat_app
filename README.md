@@ -10,13 +10,13 @@
    ![chat](assets/chat.png)
 
 2. ## Tools Used
-   a. Node.js (npm)
-   b. Mongodb Atlas (db)
-   c. Cloudinary (image storage)
-   d. Vite (build tool)
+   a. Node.js (npm)<br>
+   b. Mongodb Atlas (db)<br>
+   c. Cloudinary (image storage)<br>
+   d. Vite (build tool)<br>
 
 3. ## Build Steps
    a. Clone the project into your computer system.<br>
-   b. Make sure Node.js is installed into your system.<br>
-   c. Go to Mongodb Atlas website and make a database for the the application. Also do the same with Cloudinary.<br>
+   b. Make sure <a href="https://nodejs.org/en/download">Node.js</a> is installed into your system.<br>
+   c. Go to <a href="https://account.mongodb.com/account/login">Mongodb</a> Atlas website and make a database for the the application. Also do the same with <a href="https://cloudinary.com/users/login">Cloudinary</a>.<br>
    d. The root project folder provides .env.sample file for the necessary variables. Change it's name to .env and place it inside the backend folder.<br>
