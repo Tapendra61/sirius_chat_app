@@ -1,27 +1,84 @@
-# Chatty
-Chatty is a Real Time chat application made using React.js as it's frontend and Express.js as the backend.
+# Sirius Chat App
 
-1. ## Screenshots
+A real-time chat application built with React.js and Express.js, featuring instant messaging, online user presence, image sharing, and theme customization.
 
-	### Login
-	![login](assets/login.png)
+**Live Demo:** [sirius-chat-app.vercel.app](https://sirius-chat-app.vercel.app)
 
-	### Chat
-	![chat](assets/chat.png)
+## Screenshots
 
-2. ## Tools Used
-	a. Node.js (npm)<br>
-	b. Mongodb Atlas (db)<br>
-	c. Cloudinary (image storage)<br>
-	d. Vite (build tool)<br>
+### Login
+![login](assets/login.png)
 
-3. ## Build Steps
-	a. Clone the project into your computer system.<br>
-	b. Make sure <a href="https://nodejs.org/en/download">Node.js</a> is installed into your system.<br>
-	c. Go to <a href="https://account.mongodb.com/account/login">Mongodb Atlas</a> website and make a database for the the application. Also do the same with <a href="https://cloudinary.com/users/login">Cloudinary</a>.<br>
-	d. The root project folder provides .env.sample file for the necessary variables. Change it's name to .env and place it inside the backend folder.<br>
-	e. Fill in all the necessary variables in the .env file using api keys and passwords you got from Mongodb Atlas and Cloudinary.<br>
-	f. In terminal create two tabs. In one tab, cd into backend folder and in another tab, cd into frontend folder.<br>
-	g. Run command: "npm install" in both the terminal processes to install all the required dependencies.<br>
-	h. Finally, run command: "npm run dev" in both the terminal processes to start backend and frontend services.<br>
-	i. The terminal specifies the port number where the frontend app was started. Open your browser and go to localhost:port_number to open the application.<br>
+### Chat
+![chat](assets/chat.png)
+
+## Tech Stack
+
+**Frontend:** React 19, Vite, Tailwind CSS, DaisyUI, Zustand, Socket.IO Client
+
+**Backend:** Express.js, MongoDB (Mongoose), Socket.IO, JWT, Cloudinary
+
+## Features
+
+- Real-time messaging with Socket.IO
+- User authentication (signup, login, logout)
+- Online/offline user status
+- Image sharing via Cloudinary
+- Profile picture upload
+- 31 theme options powered by DaisyUI
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/download) installed
+- [MongoDB Atlas](https://account.mongodb.com/account/login) account and cluster
+- [Cloudinary](https://cloudinary.com/users/login) account
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/sirius-chat-app.git
+   cd sirius-chat-app
+   ```
+
+2. Create the environment file:
+   - Copy `.env.sample` to `backend/.env`
+   - Fill in your MongoDB Atlas URI, JWT secret, and Cloudinary credentials
+
+3. Install dependencies:
+   ```bash
+   cd backend && npm install
+   cd ../frontend && npm install
+   ```
+
+4. Start the development servers:
+   ```bash
+   # Terminal 1 - Backend
+   cd backend && npm run dev
+
+   # Terminal 2 - Frontend
+   cd frontend && npm run dev
+   ```
+
+5. Open your browser at the URL shown in the frontend terminal (default: `http://localhost:5173`)
+
+### Environment Variables
+
+```
+MONGODB_URI=         # MongoDB Atlas connection string
+PORT=5001            # Backend server port
+JWT_SECRET=          # Secret key for JWT signing
+NODE_ENV=development # Set to "production" in deployment
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+## Deployment
+
+- **Frontend** is deployed on [Vercel](https://vercel.com)
+- **Backend** is deployed on [Render](https://render.com)
+
+Set `VITE_BACKEND_URL` in Vercel and `CLIENT_URL` in Render to connect the two services.
